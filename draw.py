@@ -81,6 +81,7 @@ def add_sphere(polygons, cx, cy, cz, r, step ):
             index = lat * step + longt
 
             if longt == 0:
+                #continue
                 add_polygon(polygons,
                             points[index][0], points[index][1], points[index][2],
                             points[(index + 1)%maxind][0], points[(index + 1)%maxind][1], points[(index + 1)%maxind][2],
@@ -90,8 +91,8 @@ def add_sphere(polygons, cx, cy, cz, r, step ):
             elif longt == longt_stop - 1:
                 add_polygon(polygons,
                             points[index][0], points[index][1], points[index][2],
-                            points[(index + 1)%maxind][0], points[(index + 1)%maxind][1], points[(index + 1)%maxind][2],
-                            points[(index + step + 1)%maxind][0], points[(index + step + 1)%maxind][1], points[(index + step + 1)%maxind][2])
+                            points[(index + step + 1)%maxind][0], points[(index + step + 1)%maxind][1], points[(index + step + 1)%maxind][2],
+                            points[(index + step)%maxind][0], points[(index + step)%maxind][1], points[(index + step)%maxind][2])
                 continue
 
             add_polygon(polygons,
